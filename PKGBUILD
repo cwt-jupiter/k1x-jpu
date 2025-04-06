@@ -3,7 +3,7 @@
 pkgname=k1x-jpu
 pkgdesc="JPEG Process Unit API for SpacemiT K1-x"
 pkgver=2.0.2
-pkgrel=1
+pkgrel=2
 arch=('riscv64')
 url="https://gitee.com/bianbu-linux/k1x-jpu"
 license=('BSD-3-Clause')
@@ -28,7 +28,7 @@ prepare() {
       patch -Np1 < "../$src"
     done
 
-    cmake -B build -DCMAKE_INSTALL_PREFIX=${pkgdir}/usr
+    cmake -B build -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_INSTALL_PREFIX=${pkgdir}/usr
 }
 
 build() {
